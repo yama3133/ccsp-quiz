@@ -134,7 +134,7 @@ const App = () => {
         <Grid />
         <div style={{ maxWidth: 720, margin: '0 auto', padding: '40px 20px' }}>
           <div style={{ textAlign: 'center', marginBottom: 60, animation: 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }}>
-            <div style={{ fontSize: 56, fontWeight: 800, letterSpacing: '-0.02em', background: 'linear-gradient(135deg, #ff8c42 0%, #ffb366 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: 8 }}>
+            <div style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.02em', background: 'linear-gradient(135deg, #ff8c42 0%, #ffb366 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: 12, lineHeight: 1.2 }}>
               CCSP 認定試験
             </div>
             <div style={{ fontSize: 14, color: '#7a8599', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase' }}>
@@ -143,7 +143,7 @@ const App = () => {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24, animation: 'fade-in 0.6s ease 0.1s both' }}>
-            <div onClick={() => startQuiz('sequential', null)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '18px 22px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s ease', boxShadow: 'var(--shadow-sm)', color: 'var(--text)', backgroundImage: 'linear-gradient(180deg, #ff8c42 0%, #e67e30 100%)', borderColor: 'rgba(230, 126, 48, 0.55)', boxShadow: '0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 8px 20px rgba(255, 140, 66, 0.32)' }}>
+            <div onClick={() => startQuiz('sequential', null)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '18px 22px', background: 'linear-gradient(180deg, #ff8c42 0%, #e67e30 100%)', border: '1px solid rgba(230, 126, 48, 0.55)', borderRadius: 14, cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s ease', boxShadow: '0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 8px 20px rgba(255, 140, 66, 0.32)' }}>
               <div>
                 <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.005em', color: '#ffffff' }}>全問順番通り</div>
                 <div style={{ fontSize: '12.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.5 }}>108問 順序通りに出題</div>
@@ -169,7 +169,7 @@ const App = () => {
           </div>
 
           <div style={{ animation: 'fade-in 0.6s ease 0.2s both' }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: 12, fontFamily: "'JetBrains Mono', monospace" }}>📚 ドメイン別</div>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: 12, fontFamily: "'JetBrains Mono', monospace" }}>ドメイン別</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 10 }}>
               {[1, 2, 3].map(id => (
                 <div key={id} onClick={() => startQuiz('sequential', id)} style={{ padding: '12px 16px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, cursor: 'pointer', textAlign: 'center', color: 'var(--text)', fontSize: 13, fontWeight: 600, transition: 'all 0.15s ease', boxShadow: 'var(--shadow-sm)' }}>
