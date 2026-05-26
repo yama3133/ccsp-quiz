@@ -204,16 +204,16 @@ const App = () => {
         <Ambient />
         <Grid />
         <div style={{ maxWidth: 800, margin: '0 auto', padding: isMobile ? '20px 16px' : '40px 20px', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32, padding: '16px 20px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, boxShadow: 'var(--shadow-sm)', animation: 'slide-up 0.5s ease' }}>
+          <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', alignItems: isMobile ? 'stretch' : 'center', marginBottom: 32, padding: isMobile ? '12px 14px' : '16px 20px', gap: isMobile ? 10 : 0, background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, boxShadow: 'var(--shadow-sm)', animation: 'slide-up 0.5s ease' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <div style={{ fontSize: 12, color: 'var(--text-dim)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em', textTransform: 'uppercase' }}>進捗</div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#ff8c42' }}>{currentQuestion + 1}/{questions.length}</div>
+              <div style={{ fontSize: isMobile ? 10 : 12, color: 'var(--text-dim)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em', textTransform: 'uppercase' }}>進捗</div>
+              <div style={{ fontSize: isMobile ? 14 : 18, fontWeight: 700, color: '#ff8c42' }}>{currentQuestion + 1}/{questions.length}</div>
             </div>
-            <div style={{ width: 280, height: 6, background: 'var(--surface-3)', borderRadius: 3, overflow: 'hidden', border: '1px solid var(--border)' }}>
+            <div style={{ flex: 1, height: 6, background: 'var(--surface-3)', borderRadius: 3, overflow: 'hidden', border: '1px solid var(--border)', minWidth: '100px' }}>
               <div style={{ height: '100%', background: 'linear-gradient(90deg, #ff8c42 0%, #ffb366 100%)', transition: 'width 0.3s ease', width: `${((currentQuestion + 1) / questions.length) * 100}%` }}></div>
             </div>
-            {timerActive && <div style={{ fontSize: 16, fontWeight: 700, color: timeLeft < 600 ? '#ef4444' : '#ff8c42', fontFamily: "'JetBrains Mono', monospace" }}>{formatTime(timeLeft)}</div>}
-            <button onClick={() => { setStage('title'); setTimerActive(false); }} style={{ padding: '8px 16px', background: 'transparent', border: '1px solid var(--border)', borderRadius: 8, cursor: 'pointer', color: 'var(--text-muted)', fontSize: 14 }}>中断</button>
+            {timerActive && <div style={{ fontSize: isMobile ? 12 : 16, fontWeight: 700, color: timeLeft < 600 ? '#ef4444' : '#ff8c42', fontFamily: "'JetBrains Mono', monospace", whiteSpace: 'nowrap' }}>{formatTime(timeLeft)}</div>}
+            <button onClick={() => { setStage('title'); setTimerActive(false); }} style={{ padding: isMobile ? '6px 12px' : '8px 16px', background: 'transparent', border: '1px solid var(--border)', borderRadius: 8, cursor: 'pointer', color: 'var(--text-muted)', fontSize: isMobile ? 12 : 14 }}>中断</button>
           </div>
 
           <div style={{ flex: 1, marginBottom: 24, animation: 'slide-up 0.4s ease' }}>
