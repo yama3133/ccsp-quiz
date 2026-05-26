@@ -139,7 +139,7 @@ const App = () => {
       <div style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1 }}>
         <Ambient />
         <Grid />
-        <div style={{ maxWidth: 720, margin: '0 auto', padding: '40px 20px' }}>
+        <div style={{ maxWidth: isMobile ? '100%' : 720, margin: '0 auto', padding: isMobile ? '20px 12px' : '40px 20px' }}>
           <div style={{ textAlign: 'center', marginBottom: isMobile ? 32 : 60, animation: 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }}>
             <div style={{ fontSize: isMobile ? 32 : 48, fontWeight: 800, letterSpacing: '-0.02em', background: 'linear-gradient(135deg, #ff8c42 0%, #ffb366 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: 12, lineHeight: 1.2 }}>
               CCSP 認定試験
