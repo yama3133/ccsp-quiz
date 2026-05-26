@@ -1,16 +1,142 @@
-# React + Vite
+# CCSP 認定試験問題集
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Certified Cloud Security Professional** (CCSP) 認定資格試験の学習支援アプリケーションです。
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ISC² が提供する CCSP 認定試験に向けた学習をサポートするための対話型問題集です。108問の問題を含み、複数の学習モードが提供されています。
 
-## React Compiler
+- **全問順番通り**: 108問を順序通りに解く
+- **ランダム108問**: 108問をシャッフルして解く
+- **模擬試験**: 4時間の制限時間で本番環境をシミュレート
+- **ドメイン別**: 特定のドメインに焦点を当てて学習
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 主な機能
 
-## Expanding the ESLint configuration
+### 📊 複数の学習モード
+- **順序通り学習**: 体系的に学べる
+- **ランダム学習**: ランダムな順序で脳を刺激
+- **制限時間練習**: 実際の試験環境をシミュレート
+- **ドメイン別学習**: 弱点強化に最適
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📚 学習ドメイン
+1. **ドメイン1**: クラウドの概念、アーキテクチャ、設計 (34問)
+2. **ドメイン2**: クラウドデータセキュリティ (40問)
+3. **ドメイン3**: クラウドプラットフォームとインフラストラクチャセキュリティ (34問)
+
+### 💡 学習支援機能
+- 即座的フィードバック: 各問題に詳細な解説を提供
+- 正解率表示: 全体と各ドメイン別の正解率を視覚化
+- 進捗トラッキング: 現在の問題番号と全体進捗を表示
+
+## 技術スタック
+
+- **フレームワーク**: React 19
+- **ビルドツール**: Vite
+- **言語**: JavaScript / CSS
+- **デプロイ**: Vercel
+
+## インストールと実行
+
+### ローカル開発
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/yama3133/ccsp-quiz.git
+cd ccsp-quiz
+
+# 依存パッケージをインストール
+npm install
+
+# 開発サーバーを起動
+npm run dev
+
+# ブラウザで http://localhost:5173 にアクセス
+```
+
+### 本番環境へのビルド
+
+```bash
+npm run build
+npm run preview
+```
+
+## ディレクトリ構成
+
+```
+ccsp-quiz/
+├── src/
+│   ├── App.jsx          # メインアプリケーションコンポーネント
+│   ├── App.css          # スタイル定義
+│   ├── questions.js     # 問題データ（108問）
+│   ├── main.jsx         # エントリーポイント
+│   └── index.css        # グローバルスタイル
+├── index.html           # HTML テンプレート
+├── package.json         # パッケージ設定
+├── vite.config.js       # Vite 設定
+└── README.md            # このファイル
+```
+
+## デザイン
+
+### カラースキーム
+- **背景**: 濃紺 (#05070d)
+- **アクセント**: オレンジ (#ff8c42)
+- **テキスト**: ライトグレー (#e8eef8)
+
+### UI/UX
+- ガラスモーフィズムデザイン
+- レスポンシブレイアウト
+- スムーズなアニメーション
+- アクセシビリティを考慮した配色
+
+## 学習内容
+
+CCSP 認定試験の合格に必要な知識をカバーしています：
+
+- クラウドセキュリティの基礎
+- 暗号化とキー管理
+- アイデンティティとアクセス管理
+- データ保護と個人情報保護
+- ネットワークセキュリティ
+- クラウドプラットフォームセキュリティ
+- インシデント対応とフォレンジックス
+
+## デプロイ
+
+このアプリケーションは Vercel にホストされています。
+
+- **URL**: https://ccsp-quiz-vite.vercel.app
+- **GitHub**: https://github.com/yama3133/ccsp-quiz
+
+### 自動デプロイ
+
+GitHub の main ブランチへのプッシュは自動的に Vercel にデプロイされます。
+
+## 学習のコツ
+
+1. **全問順番通り**: まずは各ドメインの内容を体系的に理解する
+2. **ドメイン別**: 苦手なドメインに集中して学習する
+3. **ランダム**: 問題形式に慣れるために複数回挑戦
+4. **模擬試験**: 最後に本番環境をシミュレートして準備確認
+
+## ライセンス
+
+This project is provided as-is for educational purposes.
+
+## 貢献
+
+改善案やバグ報告は GitHub Issues で受け付けています。
+
+## 関連資料
+
+- [ISC² CCSP 認定](https://www.isc2.org/Certifications/CCSP)
+- [クラウドセキュリティ学習リソース](https://www.isc2.org/)
+
+## サポート
+
+問題や質問がある場合は、GitHub リポジトリで Issue を作成してください。
+
+---
+
+**最終更新**: 2026年5月26日
