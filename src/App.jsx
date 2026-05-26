@@ -146,15 +146,15 @@ const App = () => {
             <div onClick={() => startQuiz('sequential', null)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '18px 22px', background: 'linear-gradient(180deg, #ff8c42 0%, #e67e30 100%)', border: '1px solid rgba(230, 126, 48, 0.55)', borderRadius: 14, cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s ease', boxShadow: '0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 8px 20px rgba(255, 140, 66, 0.32)' }}>
               <div>
                 <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.005em', color: '#ffffff' }}>全問順番通り</div>
-                <div style={{ fontSize: '12.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.5 }}>108問 順序通りに出題</div>
+                <div style={{ fontSize: '12.5px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.5 }}>200問 順序通りに出題</div>
               </div>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', padding: '5px 10px', background: 'rgba(255, 255, 255, 0.18)', border: '1px solid rgba(255, 255, 255, 0.28)', borderRadius: 999, color: '#ffffff' }}>順序</div>
             </div>
 
             <div onClick={() => startQuiz('random', null)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '18px 22px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s ease', boxShadow: 'var(--shadow-sm)', color: 'var(--text)' }}>
               <div>
-                <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.005em', color: 'var(--text)' }}>ランダム108問</div>
-                <div style={{ fontSize: '12.5px', color: 'var(--text-dim)', lineHeight: 1.5 }}>108問 シャッフル</div>
+                <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.005em', color: 'var(--text)' }}>ランダム200問</div>
+                <div style={{ fontSize: '12.5px', color: 'var(--text-dim)', lineHeight: 1.5 }}>200問 シャッフル</div>
               </div>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', padding: '5px 10px', background: 'var(--surface-3)', border: '1px solid var(--border)', borderRadius: 999, color: 'var(--text-dim)' }}>ランダム</div>
             </div>
@@ -171,13 +171,16 @@ const App = () => {
           <div style={{ animation: 'fade-in 0.6s ease 0.2s both' }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: 12, fontFamily: "'JetBrains Mono', monospace" }}>ドメイン別</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 10 }}>
-              {[1, 2, 3].map(id => (
-                <div key={id} onClick={() => startQuiz('sequential', id)} style={{ padding: '12px 16px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, cursor: 'pointer', textAlign: 'center', color: 'var(--text)', fontSize: 13, fontWeight: 600, transition: 'all 0.15s ease', boxShadow: 'var(--shadow-sm)' }}>
-                  ドメイン{id}
-                  <br />
-                  ({id === 1 ? '34' : id === 2 ? '40' : '34'}問)
-                </div>
-              ))}
+              {[1, 2, 3, 4, 5, 6].map(id => {
+                const domainQuestions = originalQuestions.filter(q => q.domain === id);
+                return (
+                  <div key={id} onClick={() => startQuiz('sequential', id)} style={{ padding: '12px 16px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, cursor: 'pointer', textAlign: 'center', color: 'var(--text)', fontSize: 13, fontWeight: 600, transition: 'all 0.15s ease', boxShadow: 'var(--shadow-sm)' }}>
+                    ドメイン{id}
+                    <br />
+                    ({domainQuestions.length}問)
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
